@@ -43,3 +43,14 @@ const muroConstruidoPromesa = construir({...muro})
 muroConstruidoPromesa
 .then((muro)=> console.log("el muro ya fue construido", muro))
 .catch((err) => console.error(err))
+
+const aplanar = (muro) => {
+    return new Promise ((resolve, reject) => {
+        setTimeout(()=>{
+            muro.aplanado = true
+            if(!muro.aplanado){
+                reject(new Error("no se pudo aplanar"))
+            }
+        })
+    })
+}
